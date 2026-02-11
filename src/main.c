@@ -2,15 +2,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#include "ui.h"
+
 static void activate(GtkApplication* app, gpointer user_data) {
-    GtkWidget* window;
-    window = gtk_application_window_new(app);
-    gtk_window_set_title(GTK_WINDOW(window), "Wally");
-    gtk_window_set_default_size(GTK_WINDOW(window), 500, 300);
-
-    gtk_window_set_modal(GTK_WINDOW(window), TRUE);
-
-    gtk_window_present(GTK_WINDOW(window));
+    ui_create(app);
 }
 
 int main(int argc, char** argv) {
