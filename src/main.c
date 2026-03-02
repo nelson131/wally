@@ -2,10 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "ui.h"
+#include "wally.h"
 
 static void activate(GtkApplication* app, gpointer user_data) {
-    ui_create(app);
+    GtkWidget* window = wally_create_shell(app);
+    wally_render(window);
 }
 
 int main(int argc, char** argv) {
