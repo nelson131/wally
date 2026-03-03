@@ -67,14 +67,14 @@ int wally_storage_save(const char* path) {
     snprintf(file_path, sizeof(file_path), "%s%s%s", home_dir, STORAGE_DIR,
              FILE_NAME);
 
-    FILE* file = fopen(file_path, "w");
+    FILE* file = fopen(file_path, "a");
     if (!file) {
         printf("Error: failed to open storage file");
         free(file_path);
         return 0;
     }
 
-    fprintf(file, "%s", path);
+    fprintf(file, "%s\n", path);
     fclose(file);
     free(file_path);
 
