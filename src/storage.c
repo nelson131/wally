@@ -126,7 +126,9 @@ int wally_storage_forget(const char* path) {
     return 1;
 }
 
-char* wally_get_storage_dir_path() {
+char* wally_storage_get()
+
+    char* wally_get_storage_dir_path() {
     const char* home_dir = getenv("HOME");
 
     char* dir_path = malloc(MAX_PATH_LENGTH * sizeof(char));
